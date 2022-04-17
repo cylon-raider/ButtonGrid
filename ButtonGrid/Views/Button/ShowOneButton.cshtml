@@ -1,0 +1,14 @@
+﻿@model ButtonGrid.Models.ButtonModel
+
+@{
+    string[] imagenames = { "blueb.png", "greenb.png", "purpleb.png", "redb.png" };
+}
+
+<button class="game-button" type="submit" value="@Model.Id" name="buttonNumber" asp-controller="Button" asp-action="HandleButtonClick">
+    <img class="game-button-image" src="~/img/@imagenames[Model.ButtonState]" />
+    <div class="button-label">
+        @Model.Id 
+        , 
+        @Model.ButtonState
+    </div>
+</button>
