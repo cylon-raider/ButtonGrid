@@ -45,5 +45,15 @@ namespace ButtonGrid.Controllers
             // re-display the button that was clicked
             return PartialView(buttons.ElementAt(buttonNumber));
         }
+
+        public IActionResult RightClickShowOneButton(int buttonNumber)
+        {
+
+            buttons.ElementAt(buttonNumber).ButtonState = 0;
+            // re-display the button that was clicked
+            return PartialView("ShowOneButton", buttons.ElementAt(buttonNumber));
+        }
+
+
     }
 }
